@@ -33,8 +33,9 @@ public class ProductsDAO extends BaseDAO{
 		varname1.append("INNER JOIN ");
 		varname1.append("colors AS c ");
 		varname1.append("ON p.id = c.idproduct ");
-		varname1.append("GROUP BY p.id , c.idproduct;");
-		
+		varname1.append("GROUP BY p.id , c.idproduct");
+		varname1.append(" ORDER BY RAND()");
+		varname1.append(" LIMIT 9;");
 		return varname1.toString();
 	}
 	
