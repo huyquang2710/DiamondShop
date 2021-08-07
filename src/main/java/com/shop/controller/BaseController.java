@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.shop.service.web.ICategorysService;
 import com.shop.service.web.IMenuService;
+import com.shop.service.web.IProductsService;
 import com.shop.service.web.ISlidesService;
 
 @Controller
@@ -18,7 +19,8 @@ public class BaseController {
 	protected ISlidesService slidesService;
 	@Autowired
 	protected IMenuService menuService;
-	
+	@Autowired
+	protected IProductsService productsService;
 	public ModelAndView modelAndView = new ModelAndView();
 	
 	@PostConstruct

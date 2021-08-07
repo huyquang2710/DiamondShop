@@ -6,6 +6,7 @@
 	<!-- 
 Body Section 
 -->
+<h1>${ products.size() }	</h1>
 		<div class="row">
 			<div id="sidebar" class="span3">
 				<div class="well well-small">
