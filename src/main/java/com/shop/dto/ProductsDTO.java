@@ -18,8 +18,8 @@ public class ProductsDTO {
 	private double price;
 	private int sale;
 	private String title;
-	private int highlight;
-	private String newproduct;
+	private boolean highlight;
+	private boolean newproduct;
 	private String details;
 	private int idcolor;
 	private String namecolor;

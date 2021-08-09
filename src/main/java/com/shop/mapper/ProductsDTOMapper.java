@@ -20,7 +20,8 @@ public class ProductsDTOMapper implements RowMapper<ProductsDTO>{
 		dto.setPrice(rs.getDouble("price"));
 		dto.setSale(rs.getInt("sale"));
 		dto.setTitle(rs.getString("title"));
-		dto.setNewproduct(rs.getString("newproduct"));
+		dto.setHighlight(rs.getBoolean("highlight"));
+		dto.setNewproduct(rs.getBoolean("newproduct"));
 		dto.setDetails(rs.getString("details"));
 		dto.setIdcolor(rs.getInt("idcolor"));
 		dto.setNamecolor(rs.getString("namecolor"));
