@@ -11,7 +11,6 @@ import com.shop.service.web.IMenuService;
 
 @Service
 public class MenuServiceImpl implements IMenuService{
-	
 	@Autowired
 	private MenuDAO menuDAO;
 
