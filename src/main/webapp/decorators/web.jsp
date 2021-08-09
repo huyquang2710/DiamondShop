@@ -20,6 +20,7 @@
 <!-- Favicons -->
 <link rel="shortcut icon"
 	href="<c:url value="/template/web/assets/ico/favicon.ico " /> 	" />
+	<dec:head/>
 </head>
 <body>
 	

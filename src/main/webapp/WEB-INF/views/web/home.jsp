@@ -12,7 +12,7 @@ Body Section
 					<ul class="nav nav-list">
 						<c:forEach var="item" items="${ categorys }">
 							
-						<li><a href="products.html"><span
+						<li><a href="<c:url value="/san-pham/${ item.id }" />"><span
 								class="icon-chevron-right"></span>${ item.name }</a>
 						</li>
 						</c:forEach>
