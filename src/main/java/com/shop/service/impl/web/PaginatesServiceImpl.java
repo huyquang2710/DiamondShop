@@ -12,7 +12,6 @@ public class PaginatesServiceImpl implements IPaginatesService{
 	public PaginatesDTO getPaginates(int totalData, int limit, int currentPage) {
 		PaginatesDTO dto = new PaginatesDTO();
 		dto.setLimit(limit);
-		
 		dto.setTotalPage(setInfoTotalPage(totalData, limit)); 
 //		dto.setTotalData(totalData);
 		dto.setCurrentPage(checkCurrentPage(currentPage,dto.getTotalPage()));
@@ -46,5 +45,7 @@ public class PaginatesServiceImpl implements IPaginatesService{
 		}
 		return currentPage;
 	}
+	
+	
 
 }

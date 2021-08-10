@@ -10,9 +10,9 @@ import com.shop.dto.PaginatesDTO;
 
 @Controller
 public class CategoryController extends BaseController{
+	private int totalProductsPage = 9;
 	@RequestMapping("/san-pham/{id}")
 	public ModelAndView category(@PathVariable String id) {
-		int totalProductsPage = 9;
 		
 		modelAndView.setViewName("web/products/category");
 		
@@ -20,7 +20,22 @@ public class CategoryController extends BaseController{
 		int totalData = categorysService.findProdcutsById(Integer.parseInt(id)).size();
 		PaginatesDTO paginatesDTO = paginatesService.getPaginates(totalData, totalProductsPage, 1);
 		modelAndView.addObject("paginatesDTO", paginatesDTO);
-		modelAndView.addObject("allProductsPaginate", categorysService.findProductsPaginate(paginatesDTO.getStart(), paginatesDTO.getEnd()));
+		modelAndView.addObject("idCategory", id);
+		modelAndView.addObject("allProductsPaginate", categorysService.findProductsPaginate(Integer.parseInt(id), paginatesDTO.getStart(), totalProductsPage));
+		return modelAndView;
+	}
+	@RequestMapping("/san-pham/{id}/{currentPage}")
+	public ModelAndView category(@PathVariable String id,@PathVariable String currentPage) {
+		
+		
+		modelAndView.setViewName("web/products/category");
+		
+		//Phan trang
+		int totalData = categorysService.findProdcutsById(Integer.parseInt(id)).size();
+		PaginatesDTO paginatesDTO = paginatesService.getPaginates(totalData, totalProductsPage, Integer.parseInt(currentPage));
+		modelAndView.addObject("paginatesDTO", paginatesDTO);
+		modelAndView.addObject("idCategory", id);
+		modelAndView.addObject("allProductsPaginate", categorysService.findProductsPaginate(Integer.parseInt(id),paginatesDTO.getStart(), paginatesDTO.getEnd()));
 		return modelAndView;
 	}
 }

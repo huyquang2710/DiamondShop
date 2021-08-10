@@ -11,6 +11,6 @@ import com.shop.entity.CategorysEntity;
 public interface ICategorysService {
 	List<CategorysEntity> findAllCategorys();
 	List<ProductsDTO> findProdcutsById(int id);
-	List<ProductsDTO> findProductsPaginate(int start, int end);
+	List<ProductsDTO> findProductsPaginate(int id, int start, int totalPage);
 	
 }

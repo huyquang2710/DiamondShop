@@ -32,8 +32,8 @@ public class CategorysServiceImpl implements ICategorysService{
 	}
 
 	@Override
-	public List<ProductsDTO> findProductsPaginate(int start, int end) {
-		return productDAO.findProductsPaginate(start, end);
+	public List<ProductsDTO> findProductsPaginate(int id, int start, int totalPage) {
+		return productDAO.findProductsPaginate(id, start, totalPage);
 	}
 
 
