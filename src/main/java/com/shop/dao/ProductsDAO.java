@@ -59,7 +59,7 @@ public class ProductsDAO extends BaseDAO {
 		return varname1.toString();
 	}
 
-	public StringBuffer sqlfindProductsById(int id) {
+	public StringBuffer sqlfindAllProductsById(int id) {
 		StringBuffer varname1 = sqlString();
 		varname1.append("WHERE 1 = 1 ");
 		varname1.append("AND idcategory = " + id + " ");
@@ -68,7 +68,7 @@ public class ProductsDAO extends BaseDAO {
 	}
 
 	public String sqlProductsPaginate(int id, int start, int totalPage) {
-		StringBuffer varname1 = sqlfindProductsById(id);
+		StringBuffer varname1 = sqlfindAllProductsById(id);
 		varname1.append("LIMIT " + start + ", " + totalPage);
 
 		return varname1.toString();
@@ -81,7 +81,7 @@ public class ProductsDAO extends BaseDAO {
 
 	}
 
-	public List<ProductsDTO> findProductsById(int id) {
+	public List<ProductsDTO> findAllProductsById(int id) {
 		String sql = sqlfindProductsById(id).toString();
 		List<ProductsDTO> productsList = jdbcTemplatee.query(sql, new ProductsDTOMapper());
 		return productsList;
@@ -89,7 +89,7 @@ public class ProductsDAO extends BaseDAO {
 	}
 
 	public List<ProductsDTO> findProductsPaginate(int id, int start, int totalPage) {
-		StringBuffer sqlFindById = sqlfindProductsById(id);
+		StringBuffer sqlFindById = sqlfindAllProductsById(id);
 		List<ProductsDTO> productsListById = jdbcTemplatee.query(sqlFindById.toString(), new ProductsDTOMapper());
 		List<ProductsDTO> productsList = new ArrayList<>();
 		if(productsListById.size() > 0) {
@@ -98,5 +98,17 @@ public class ProductsDAO extends BaseDAO {
 		}
 		return productsList;
 
+	}
+	public String sqlfindProductsById(int id) {
+		StringBuffer varname1 = sqlString();
+		varname1.append("WHERE 1 = 1 ");
+		varname1.append("AND p.id = " + id + " ");
+		varname1.append("LIMIT 1");
+		return varname1.toString();
+	}
+	public List<ProductsDTO> findProductsById(int id) {
+		String sql = sqlfindProductsById(id);
+		List<ProductsDTO> listAllProduct = jdbcTemplatee.query(sql, new ProductsDTOMapper());
+		return listAllProduct;
 	}
 }

@@ -9,4 +9,6 @@ import com.shop.dto.ProductsDTO;
 @Service
 public interface IProductsService {
 	List<ProductsDTO> findAllProducts();
+	public ProductsDTO findProductsById(int id);
+	public List<ProductsDTO> findProductsByIdCategory(int id);
 }

@@ -28,7 +28,7 @@ public class CategorysServiceImpl implements ICategorysService{
 	@Override
 	public List<ProductsDTO> findProdcutsById(int id) {
 		// TODO Auto-generated method stub
-		return productDAO.findProductsById(id);
+		return productDAO.findAllProductsById(id);
 	}
 
 	@Override

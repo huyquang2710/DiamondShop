@@ -17,6 +17,7 @@ public class HomeController extends BaseController{
 		modelAndView.addObject("categorys", categorysService.findAllCategorys());
 		modelAndView.addObject("products", productsService.findAllProducts());
 		modelAndView.setViewName("web/home");
+		
 ;		return modelAndView;
 	}
 }

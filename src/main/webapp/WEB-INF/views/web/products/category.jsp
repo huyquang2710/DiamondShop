@@ -29,7 +29,7 @@
 								<a href="product_details.html" class="overlay"></a> <a
 									class="zoomTool" href="product_details.html"
 									title="add to cart"><span class="icon-search"></span> QUICK
-									VIEW</a> <a href="product_details.html"><img
+									VIEW</a> <a href="<c:url value="/chi-tiet-san-pham/${ item.idproduct	 }"/>"><img
 									src="<c:url value="/template/web/assets/img/${ item.img }"/>"
 									alt=""></a>
 								<div class="caption cntr">
